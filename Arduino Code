@@ -16,6 +16,55 @@ void setup() {
 
 }
 
+void forward()
+{
+  analogWrite(fl,170);
+  analogWrite(fr,170);
+  analogWrite(rl,0);
+  analogWrite(rr,0);
+}
+
+void turnLeft()
+{
+  analogWrite(fl,120);
+  analogWrite(fr,195);
+  analogWrite(rl,0);
+  analogWrite(rr,0);
+}
+
+void turnRight()
+{
+  analogWrite(fl,195);
+  analogWrite(rr,0);
+  analogWrite(rl,0);
+  analogWrite(fr,120);
+}
+
+void pause()
+{
+  analogWrite(fl,0);
+  analogWrite(rr,0);
+  analogWrite(rl,0);
+  analogWrite(fr,0);
+}
+
+void HLeft()                     // Hard Left motion of Robot
+{
+  analogWrite(fl,0);
+  analogWrite(rr,0);
+  analogWrite(rl,0);
+  analogWrite(fr,200);
+}
+
+void HRight()                    // Hard Right motion of Robot
+{
+  analogWrite(fl,200);
+  analogWrite(rr,0);
+  analogWrite(rl,0);
+  analogWrite(fr,0);
+}
+
+
 void loop() {
   if(Serial.available())
       {
@@ -77,51 +126,4 @@ void loop() {
         
        
       }
-}
-void forward()
-{
-  analogWrite(fl,170);
-  analogWrite(fr,170);
-  analogWrite(rl,0);
-  analogWrite(rr,0);
-}
-
-void turnLeft()
-{
-  analogWrite(fl,120);
-  analogWrite(fr,195);
-  analogWrite(rl,0);
-  analogWrite(rr,0);
-}
-
-void turnRight()
-{
-  analogWrite(fl,195);
-  analogWrite(rr,0);
-  analogWrite(rl,0);
-  analogWrite(fr,120);
-}
-
-void pause()
-{
-  analogWrite(fl,0);
-  analogWrite(rr,0);
-  analogWrite(rl,0);
-  analogWrite(fr,0);
-}
-
-void HLeft()                     // Hard Left motion of Robot
-{
-  analogWrite(fl,0);
-  analogWrite(rr,0);
-  analogWrite(rl,0);
-  analogWrite(fr,200);
-}
-
-void HRight()                    // Hard Right motion of Robot
-{
-  analogWrite(fl,200);
-  analogWrite(rr,0);
-  analogWrite(rl,0);
-  analogWrite(fr,0);
 }
